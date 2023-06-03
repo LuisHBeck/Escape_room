@@ -16,6 +16,8 @@ class Window():
 
         self.first_window.flepzsButton.clicked.connect(self.flepzs_audio)
         self.first_window.torresButton.clicked.connect(self.torres_audio)
+        self.first_window.civicButton.clicked.connect(self.civic_audio)
+        self.first_window.fabioButton.clicked.connect(self.fabio_audio)
         self.first_window.correctButton.clicked.connect(self.classmates_btn)
 
         self.player = QMediaPlayer()
@@ -23,25 +25,31 @@ class Window():
         app.exec()
 
     
-    def flepzs_audio(self):
-        full_audio_path = os.path.join(os.getcwd(), 'audios\mim_de_papai.mp3')
+    def play_audio(self, audio_name):
+        full_audio_path = os.path.join(os.getcwd(), f'audios\{audio_name}.mp3')
         url = QUrl.fromLocalFile(full_audio_path)
         content = QMediaContent(url)
 
         self.player.setMedia(content)
         self.player.play()
+
+    
+    def flepzs_audio(self):
+        self.play_audio('mim_de_papai')
 
 
     def torres_audio(self):
-        full_audio_path = os.path.join(os.getcwd(), 'audios\indiano.mp3')
-        url = QUrl.fromLocalFile(full_audio_path)
-        content = QMediaContent(url)
+        self.play_audio('clb_torres')
 
-        self.player.setMedia(content)
-        self.player.play()
     
+    def civic_audio(self):
+        self.play_audio('civic_si')
     
 
+    def fabio_audio(self):
+        self.play_audio('a_mimir')
+    
+    
     def torres_btn(self):
         print('TORRES GAYZÃO')
 
