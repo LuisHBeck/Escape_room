@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QPushButton
 
 from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
+from PyQt5.QtMultimediaWidgets import QVideoWidget
 
 class Window():
     def __init__(self) -> None:
@@ -20,6 +21,7 @@ class Window():
         self.hospital_hall_window = uic.loadUi('ui_window\window_hospital_hall.ui')
         self.morgue_window = uic.loadUi('ui_window\window_morgue.ui')
         self.clown_window = uic.loadUi('ui_window\window_clown.ui')
+        self.clebinho_window = uic.loadUi('ui_window\window_clebinho.ui')
 
         self.first_window.show()
 
@@ -130,6 +132,9 @@ class Window():
 
     def second_window(self):
         print('DEU CERTO!!')
+        self.first_window.close()
+        self.clebinho_window.show()
+
 
     
     def roof_audio(self):
