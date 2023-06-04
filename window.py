@@ -1,5 +1,7 @@
 import os, sys
 
+from time import sleep
+
 from PyQt5 import uic, QtGui
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QPushButton
@@ -11,10 +13,14 @@ class Window():
     def __init__(self) -> None:
         app = QtWidgets.QApplication([])
 
+        # ALL WINDOWS
         self.first_window = uic.loadUi("ui_window\window_one.ui")
         self.timas_window = uic.loadUi("ui_window\window_timas.ui")
+        self.java_window = uic.loadUi("ui_window\window_java.ui")
+
         self.first_window.show()
 
+        # FIRTS WINDOW BUTTONS
         self.first_window.flepzsButton.clicked.connect(self.flepzs_audio)
         self.first_window.torresButton.clicked.connect(self.torres_audio)
         self.first_window.civicButton.clicked.connect(self.civic_audio)
@@ -25,6 +31,14 @@ class Window():
         self.first_window.correctButton.clicked.connect(self.second_window)
 
         self.player = QMediaPlayer()
+
+        # TIMAS WINDOW BUTTONS
+        self.timas_window.pythonButton.clicked.connect(self.timas_audio)
+        self.timas_window.javaButton.clicked.connect(self.java_lost)
+        self.timas_window.back_first_wButton.clicked.connect(self.back_firts_window)
+
+        # JAVA WINDOW BUTTON
+        self.java_window.pushButton.clicked.connect(self.java_to_firts_window)
 
         app.exec()
 
@@ -55,7 +69,7 @@ class Window():
 
     
     def timas_audio(self):
-        self.play_audio('')
+        self.play_audio('python_na_minha_aula')
 
     
     def celso_audio(self):
@@ -65,10 +79,31 @@ class Window():
     def sala_audio(self):
         ...
 
+
     def timas_window_func(self):
         self.first_window.close()
         self.timas_window.show()
+
+
+    def back_firts_window(self):
+        self.timas_window.close()
+        self.first_window.show()
+        
+
+    def java_lost(self):
+        self.play_audio('bixo_vino_mlk')
+        sleep(2)
+        self.java_window_func()
+        
     
+    def java_window_func(self):
+        self.timas_window.close()
+        self.java_window.show()   
+
+
+    def java_to_firts_window(self):
+        self.java_window.close()
+        self.first_window.show()
     
 
     def second_window(self):

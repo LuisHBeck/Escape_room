@@ -45,55 +45,20 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../imgs/TIMAS-room.png</pixmap>
+     <pixmap>../imgs/PERDEU_JAVA.png</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="pythonButton">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>480</y>
-      <width>111</width>
-      <height>111</height>
+      <x>460</x>
+      <y>500</y>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0,0,0,0)</string>
-    </property>
     <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="javaButton">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>460</y>
-      <width>91</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0,0,0,0)</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="back_first_wButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>110</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0,0,0,0)</string>
-    </property>
-    <property name="text">
-     <string/>
+     <string>VOLTAR </string>
     </property>
    </widget>
   </widget>
