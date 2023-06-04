@@ -17,6 +17,9 @@ class Window():
         self.first_window = uic.loadUi("ui_window\window_one.ui")
         self.timas_window = uic.loadUi("ui_window\window_timas.ui")
         self.java_window = uic.loadUi("ui_window\window_java.ui")
+        self.hospital_hall_window = uic.loadUi('ui_window\window_hospital_hall.ui')
+        self.morgue_window = uic.loadUi('ui_window\window_morgue.ui')
+        self.clown_window = uic.loadUi('ui_window\window_clown.ui')
 
         self.first_window.show()
 
@@ -39,6 +42,19 @@ class Window():
 
         # JAVA WINDOW BUTTON
         self.java_window.pushButton.clicked.connect(self.java_to_firts_window)
+
+        # HOSPITAL HALL BUTTONS
+        self.hospital_hall_window.cabinetButton.clicked.connect()
+        self.hospital_hall_window.doorButton.clicked.connect()
+        self.hospital_hall_window.roofButton.clicked.connect()
+
+        # HOSPITAL MORGUE BUTTONS
+        self.morgue_window.doorButton.clicked.connect()
+        self.morgue_window.clothesButton.clicked.connect()
+
+        # CLOWN BUTTONS
+        self.clown_window.noseButton.clicked.connect()
+        self.clown_window.footButton.clicked.connect()
 
         app.exec()
 
