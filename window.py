@@ -47,14 +47,17 @@ class Window():
         self.hospital_hall_window.cabinetButton.clicked.connect(self.cabinet_audio)
         self.hospital_hall_window.doorButton.clicked.connect(self.opening_the_door)
         self.hospital_hall_window.roofButton.clicked.connect(self.roof_audio)
+        self.hospital_hall_window.backButton.clicked.connect(self.back_main_window)
 
         # HOSPITAL MORGUE BUTTONS
         self.morgue_window.doorButton.clicked.connect(self.nobody_audio)
         self.morgue_window.clothesButton.clicked.connect(self.correct_object)
+        self.morgue_window.backButton.clicked.connect(self.back_to_hospital)
 
         # CLOWN BUTTONS
         self.clown_window.noseButton.clicked.connect(self.horn_audio)
         self.clown_window.footButton.clicked.connect(self.serious_audio)
+        self.clown_window.backButton.clicked.connect(self.back_to_murge)
 
         app.exec()
 
@@ -157,11 +160,28 @@ class Window():
 
     def serious_audio(self):
         self.play_audio('ta_tao_serio')
+        sleep(5)
+        self.clown_window.close()
+        self.java_window.show()
 
 
     def horn_audio(self):
         self.play_audio('buzina_palhaço')
- 
+
+
+    def back_main_window(self):
+        self.hospital_hall_window.close()
+        self.first_window.show()
+
+
+    def back_to_hospital(self):
+        self.morgue_window.close()
+        self.hospital_hall_window.show()
+
+    
+    def back_to_murge(self):
+        self.clown_window.close()
+        self.morgue_window.show()
 
 
 if __name__ == '__main__':
