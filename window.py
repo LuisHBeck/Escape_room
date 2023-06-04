@@ -49,12 +49,12 @@ class Window():
         self.hospital_hall_window.roofButton.clicked.connect(self.roof_audio)
 
         # HOSPITAL MORGUE BUTTONS
-        # self.morgue_window.doorButton.clicked.connect()
-        # self.morgue_window.clothesButton.clicked.connect()
+        self.morgue_window.doorButton.clicked.connect(self.nobody_audio)
+        self.morgue_window.clothesButton.clicked.connect(self.correct_object)
 
         # CLOWN BUTTONS
-        # self.clown_window.noseButton.clicked.connect()
-        # self.clown_window.footButton.clicked.connect()
+        self.clown_window.noseButton.clicked.connect(self.horn_audio)
+        self.clown_window.footButton.clicked.connect(self.serious_audio)
 
         app.exec()
 
@@ -143,6 +143,25 @@ class Window():
         self.hospital_hall_window.close()
         self.morgue_window.show()
 
+
+    def nobody_audio(self):
+        self.play_audio('ninguem')
+
+
+    def correct_object(self):
+        self.play_audio('acertou_mizeravi')
+        sleep(3)
+        self.morgue_window.close()
+        self.clown_window.show()
+
+
+    def serious_audio(self):
+        self.play_audio('ta_tao_serio')
+
+
+    def horn_audio(self):
+        self.play_audio('buzina_palhaço')
+ 
 
 
 if __name__ == '__main__':

@@ -64,7 +64,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="feetButton">
+   <widget class="QPushButton" name="footButton">
     <property name="geometry">
      <rect>
       <x>160</x>
