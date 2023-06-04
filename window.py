@@ -12,13 +12,17 @@ class Window():
         app = QtWidgets.QApplication([])
 
         self.first_window = uic.loadUi("ui_window\window_one.ui")
+        self.timas_window = uic.loadUi("ui_window\window_timas.ui")
         self.first_window.show()
 
         self.first_window.flepzsButton.clicked.connect(self.flepzs_audio)
         self.first_window.torresButton.clicked.connect(self.torres_audio)
         self.first_window.civicButton.clicked.connect(self.civic_audio)
         self.first_window.fabioButton.clicked.connect(self.fabio_audio)
-        self.first_window.correctButton.clicked.connect(self.classmates_btn)
+        self.first_window.timasButton.clicked.connect(self.timas_window_func)
+        self.first_window.celsoButton.clicked.connect(self.celso_audio)
+        self.first_window.salaButton.clicked.connect(self.sala_audio)
+        self.first_window.correctButton.clicked.connect(self.second_window)
 
         self.player = QMediaPlayer()
 
@@ -39,7 +43,7 @@ class Window():
 
 
     def torres_audio(self):
-        self.play_audio('clb_torres')
+        self.play_audio('indiano')
 
     
     def civic_audio(self):
@@ -48,12 +52,26 @@ class Window():
 
     def fabio_audio(self):
         self.play_audio('a_mimir')
-    
-    
-    def torres_btn(self):
-        print('TORRES GAYZÃO')
 
-    def classmates_btn(self):
+    
+    def timas_audio(self):
+        self.play_audio('')
+
+    
+    def celso_audio(self):
+        self.play_audio('errado')
+    
+
+    def sala_audio(self):
+        ...
+
+    def timas_window_func(self):
+        self.first_window.close()
+        self.timas_window.show()
+    
+    
+
+    def second_window(self):
         print('DEU CERTO!!')
 
 

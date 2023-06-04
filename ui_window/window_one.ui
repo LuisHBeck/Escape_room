@@ -160,6 +160,22 @@
      <string>PushButton</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="celsoButton">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>422</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
