@@ -30,7 +30,7 @@ class Window():
         self.first_window.fabioButton.clicked.connect(self.fabio_audio)
         self.first_window.timasButton.clicked.connect(self.timas_window_func)
         self.first_window.celsoButton.clicked.connect(self.celso_audio)
-        self.first_window.salaButton.clicked.connect(self.sala_audio)
+        self.first_window.salaButton.clicked.connect(self.ds7_photo)
         self.first_window.correctButton.clicked.connect(self.second_window)
 
         self.player = QMediaPlayer()
@@ -44,17 +44,17 @@ class Window():
         self.java_window.pushButton.clicked.connect(self.java_to_firts_window)
 
         # HOSPITAL HALL BUTTONS
-        self.hospital_hall_window.cabinetButton.clicked.connect()
-        self.hospital_hall_window.doorButton.clicked.connect()
-        self.hospital_hall_window.roofButton.clicked.connect()
+        self.hospital_hall_window.cabinetButton.clicked.connect(self.cabinet_audio)
+        self.hospital_hall_window.doorButton.clicked.connect(self.opening_the_door)
+        self.hospital_hall_window.roofButton.clicked.connect(self.roof_audio)
 
         # HOSPITAL MORGUE BUTTONS
-        self.morgue_window.doorButton.clicked.connect()
-        self.morgue_window.clothesButton.clicked.connect()
+        # self.morgue_window.doorButton.clicked.connect()
+        # self.morgue_window.clothesButton.clicked.connect()
 
         # CLOWN BUTTONS
-        self.clown_window.noseButton.clicked.connect()
-        self.clown_window.footButton.clicked.connect()
+        # self.clown_window.noseButton.clicked.connect()
+        # self.clown_window.footButton.clicked.connect()
 
         app.exec()
 
@@ -92,8 +92,11 @@ class Window():
         self.play_audio('errado')
     
 
-    def sala_audio(self):
-        ...
+    def ds7_photo(self):
+        self.play_audio('certo')
+        sleep(2)
+        self.first_window.close()
+        self.hospital_hall_window.show()
 
 
     def timas_window_func(self):
@@ -124,6 +127,22 @@ class Window():
 
     def second_window(self):
         print('DEU CERTO!!')
+
+    
+    def roof_audio(self):
+        self.play_audio('ferro')
+
+
+    def cabinet_audio(self):
+        self.play_audio('gustavo_lima')
+
+
+    def opening_the_door(self):
+        self.play_audio('porta_abrindo')
+        sleep(5)
+        self.hospital_hall_window.close()
+        self.morgue_window.show()
+
 
 
 if __name__ == '__main__':
