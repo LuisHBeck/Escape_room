@@ -22,6 +22,8 @@ class Window():
         self.morgue_window = uic.loadUi('ui_window\window_morgue.ui')
         self.clown_window = uic.loadUi('ui_window\window_clown.ui')
         self.clebinho_window = uic.loadUi('ui_window\window_clebinho.ui')
+        self.wilson_one_window = uic.loadUi('ui_window\window_wilson_one.ui')
+        self.wilson_two_window = uic.loadUi('ui_window\window_wilson_two.ui')
 
         self.first_window.show()
 
@@ -36,6 +38,14 @@ class Window():
         self.first_window.correctButton.clicked.connect(self.second_window)
 
         self.player = QMediaPlayer()
+
+        #WILSON ONE BUTTONS
+        # self.wilson_one_window.franButton.clicked.connect()
+        # self.wilson_one_window.lucaButton.clicked.connect()
+        self.wilson_one_window.wilsonButton.clicked.connect(self.wilson_second)
+
+        # WILSON TWO BUTTON
+        self.wilson_two_window.wilsonButton.clicked.connect(self.clebinho)
 
         # TIMAS WINDOW BUTTONS
         self.timas_window.pythonButton.clicked.connect(self.timas_audio)
@@ -133,8 +143,18 @@ class Window():
     def second_window(self):
         print('DEU CERTO!!')
         self.first_window.close()
-        self.clebinho_window.show()
+        # self.clebinho_window.show()
+        self.wilson_one_window.show()
 
+
+    def wilson_second(self):
+        self.wilson_one_window.close()
+        self.wilson_two_window.show()
+
+
+    def clebinho(self):
+        self.wilson_two_window.close()
+        self.clebinho_window.show()
 
     
     def roof_audio(self):
