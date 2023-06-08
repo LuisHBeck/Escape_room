@@ -40,9 +40,11 @@ class Window():
         self.player = QMediaPlayer()
 
         #WILSON ONE BUTTONS
-        # self.wilson_one_window.franButton.clicked.connect()
-        # self.wilson_one_window.lucaButton.clicked.connect()
+        self.wilson_one_window.franButton.clicked.connect(self.fran)
+        self.wilson_one_window.lucaButton.clicked.connect(self.luca)
         self.wilson_one_window.wilsonButton.clicked.connect(self.wilson_second)
+        self.wilson_one_window.vanessaButton.clicked.connect(self.vanessa)
+        self.wilson_one_window.leoButton.clicked.connect(self.leo)
 
         # WILSON TWO BUTTON
         self.wilson_two_window.wilsonButton.clicked.connect(self.clebinho)
@@ -141,7 +143,8 @@ class Window():
     
 
     def second_window(self):
-        print('DEU CERTO!!')
+        self.play_audio('ooooo')
+        sleep(3)
         self.first_window.close()
         # self.clebinho_window.show()
         self.wilson_one_window.show()
@@ -153,6 +156,8 @@ class Window():
 
 
     def clebinho(self):
+        self.play_audio('Obrigado Deus')
+        sleep(5)
         self.wilson_two_window.close()
         self.clebinho_window.show()
 
@@ -207,6 +212,22 @@ class Window():
     def back_to_murge(self):
         self.clown_window.close()
         self.morgue_window.show()
+
+
+    def fran(self):
+        self.play_audio('doutor_fran')
+
+    
+    def luca(self):
+        self.play_audio('luca')
+
+
+    def vanessa(self):
+        self.play_audio('fail')
+
+
+    def leo(self):
+        self.play_audio('skipt')
 
 
 if __name__ == '__main__':
