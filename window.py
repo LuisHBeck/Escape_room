@@ -45,9 +45,12 @@ class Window():
         self.wilson_one_window.wilsonButton.clicked.connect(self.wilson_second)
         self.wilson_one_window.vanessaButton.clicked.connect(self.vanessa)
         self.wilson_one_window.leoButton.clicked.connect(self.leo)
+        self.wilson_one_window.backButton.clicked.connect(self.back_main_window2)
+
 
         # WILSON TWO BUTTON
         self.wilson_two_window.wilsonButton.clicked.connect(self.clebinho)
+        self.wilson_two_window.backButton.clicked.connect(self.back_wilson_one)
 
         # TIMAS WINDOW BUTTONS
         self.timas_window.pythonButton.clicked.connect(self.timas_audio)
@@ -72,6 +75,9 @@ class Window():
         self.clown_window.noseButton.clicked.connect(self.horn_audio)
         self.clown_window.footButton.clicked.connect(self.serious_audio)
         self.clown_window.backButton.clicked.connect(self.back_to_murge)
+
+        # CLEBINHO BUTTONS
+        self.clebinho_window.backButton.clicked.connect(self.back_main_window3)
 
         app.exec()
 
@@ -228,6 +234,18 @@ class Window():
 
     def leo(self):
         self.play_audio('skipt')
+
+    def back_wilson_one(self):
+        self.wilson_two_window.close()
+        self.wilson_one_window.show()
+
+    def back_main_window2(self):
+        self.wilson_one_window.close()
+        self.first_window.show()
+
+    def back_main_window3(self):
+        self.clebinho_window.close()
+        self.wilson_one_window.show()
 
 
 if __name__ == '__main__':

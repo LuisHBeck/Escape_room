@@ -45,7 +45,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../imgs/wilson_1.png</pixmap>
+     <pixmap>../imgs/clebinho_1.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="franButton">
@@ -123,6 +123,38 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(0,0,0,0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clebinhoButton">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>280</y>
+      <width>75</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(0,0,0,0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(0,0,0,0)</string>
     </property>
     <property name="text">
      <string/>
