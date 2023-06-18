@@ -24,8 +24,20 @@ class Window():
         self.clebinho_window = uic.loadUi('ui_window\window_clebinho.ui')
         self.wilson_one_window = uic.loadUi('ui_window\window_wilson_one.ui')
         self.wilson_two_window = uic.loadUi('ui_window\window_wilson_two.ui')
+        self.test_ets_window = uic.loadUi('ui_window\window_prova_ets.ui')
+        self.james_window = uic.loadUi('ui_window\window_james.ui')
 
         self.first_window.show()
+
+        # JAMES BUTTON
+        self.james_window.jamesButton.clicked.connect(self.win)
+
+        # TEST ETS BUTTON
+        self.test_ets_window.enviarButton.clicked.connect(self.check_answer)
+        self.test_ets_window.box1.addItems([' ','A','B','C','D'])
+        self.test_ets_window.box2.addItems([' ','A','B','C','D'])
+        self.test_ets_window.box3.addItems([' ','A','B','C','D'])
+        self.test_ets_window.backButton.clicked.connect(self.back_main_window4)
 
         # FIRTS WINDOW BUTTONS
         self.first_window.flepzsButton.clicked.connect(self.flepzs_audio)
@@ -46,6 +58,7 @@ class Window():
         self.wilson_one_window.vanessaButton.clicked.connect(self.vanessa)
         self.wilson_one_window.leoButton.clicked.connect(self.leo)
         self.wilson_one_window.backButton.clicked.connect(self.back_main_window2)
+        self.wilson_one_window.clebinhoButton.clicked.connect(self.prova_python)
 
 
         # WILSON TWO BUTTON
@@ -247,6 +260,33 @@ class Window():
         self.clebinho_window.close()
         self.wilson_one_window.show()
 
+    def prova_python(self):
+        self.wilson_one_window.close()
+        self.test_ets_window.show()
+        
+
+    def back_main_window4(self):
+        self.test_ets_window.close()
+        self.wilson_one_window.show()
+
+    def check_answer(self):
+        asw1 = self.test_ets_window.box1.currentText()
+        asw2 = self.test_ets_window.box2.currentText()
+        asw3 = self.test_ets_window.box3.currentText()
+
+        if asw1 == 'C':
+            if asw2 == 'D':
+                if asw3 == 'B':
+                    self.test_ets_window.close()
+                    self.james_window.show()
+        
+        else:
+            self.test_ets_window.textLabel.setText('BURRÃO KAKAKAKAKA')
+
+    def win(self):
+        self.play_audio('james')
+        sleep(5)
+        self.james_window.close()
 
 if __name__ == '__main__':
     window = Window()
